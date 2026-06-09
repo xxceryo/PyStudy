@@ -6,11 +6,13 @@ from fastapi import FastAPI
 from app.api.router import api_router
 from app.core.config import get_settings
 from app.db.redis import close_redis
-from app.db.session import close_database
+from app.db.session import close_database, initialize_database
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI) -> AsyncIterator[None]:
+    if get_settings().auto_create_tables:
+        await initialize_database()
     yield
     await close_redis()
     await close_database()

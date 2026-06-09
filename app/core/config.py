@@ -7,7 +7,10 @@ class Settings(BaseSettings):
     app_name: str = "PyStudy API"
     debug: bool = True
     database_url: str = "mysql+asyncmy://root:123456@127.0.0.1:13306/pystudy"
+    auto_create_tables: bool = False
     redis_url: str = "redis://:123456@127.0.0.1:16379/0"
+    jwt_secret_key: str = "change-this-development-secret-before-production"
+    access_token_expire_seconds: int = 86400
 
     model_config = SettingsConfigDict(
         env_file=".env",

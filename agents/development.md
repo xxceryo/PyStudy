@@ -15,6 +15,7 @@
 ## 常用命令
 
 ```powershell
+.\start.ps1
 uv sync
 uv run fastapi dev app/main.py
 uv run pytest
@@ -23,6 +24,9 @@ npm install
 npm run dev
 npm run build
 ```
+
+- 在 Windows 上需要同时启动前后端开发服务时，优先使用根目录 `start.ps1`。
+- 修改 `start.ps1` 后，必须验证依赖检查、服务启动、日志输出和退出清理行为。
 
 ## 修改原则
 

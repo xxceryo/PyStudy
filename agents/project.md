@@ -17,6 +17,7 @@
 - `frontend/`：独立的 Vue 前端项目。
 - `frontend/src/`：前端应用源码；`main.ts` 为入口，`App.vue` 为根组件。
 - `frontend/public/`：无需构建处理的前端静态资源。
+- `start.ps1`：在 Windows PowerShell 中统一初始化并启动前后端开发服务。
 - `doc/`：项目使用和技术文档。
 - `docs/superpowers/`：设计与实施计划记录。
 

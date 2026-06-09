@@ -23,6 +23,7 @@ PyStudy/
 │   └── vite.config.ts        # Vite 配置
 ├── doc/                      # 项目文档
 ├── tests/                    # 后端自动化测试
+├── start.ps1                 # Windows 一键启动前后端开发服务
 ├── .env.example              # 环境变量示例
 ├── pyproject.toml            # 项目元数据和依赖配置
 └── uv.lock                   # uv 依赖锁定文件
@@ -32,6 +33,17 @@ PyStudy/
 Repository 层负责数据访问，Schema 和 Model 分别定义接口数据与数据库实体。
 
 ## Development
+
+Start the backend and frontend together on Windows:
+
+```powershell
+.\start.ps1
+```
+
+The script creates `.env` from `.env.example` when needed, installs missing
+dependencies, and stops both services when you press `Ctrl+C`.
+
+Start the backend separately:
 
 ```powershell
 Copy-Item .env.example .env

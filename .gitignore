@@ -30,6 +30,8 @@ htmlcov/
 .pyre/
 .pytype/
 .codegraph/
+.superpowers/
+.playwright-cli/
 
 # Jupyter
 .ipynb_checkpoints/
