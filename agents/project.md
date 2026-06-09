@@ -2,7 +2,7 @@
 
 ## 项目概览
 
-本项目是使用 Python 3.12、FastAPI、SQLAlchemy、Redis 和 MySQL 构建的后端项目，使用 `uv` 管理依赖和命令。
+本项目包含使用 Python 3.12、FastAPI、SQLAlchemy、Redis 和 MySQL 构建的后端，以及使用 Vue 3、TypeScript 和 Vite 构建的前端。后端使用 `uv` 管理依赖和命令，前端使用 npm。
 
 ## 目录职责
 
@@ -13,7 +13,10 @@
 - `app/repositories/`：数据访问逻辑。
 - `app/schemas/`：请求、响应及内部数据结构。
 - `app/services/`：业务逻辑和业务流程编排。
-- `tests/`：自动化测试。
+- `tests/`：后端自动化测试。
+- `frontend/`：独立的 Vue 前端项目。
+- `frontend/src/`：前端应用源码；`main.ts` 为入口，`App.vue` 为根组件。
+- `frontend/public/`：无需构建处理的前端静态资源。
 - `doc/`：项目使用和技术文档。
 - `docs/superpowers/`：设计与实施计划记录。
 
@@ -23,4 +26,6 @@
 - Service 层负责业务规则，不直接依赖 HTTP 请求或响应对象。
 - Repository 层封装数据访问，不承载业务决策。
 - Schema 与 Model 分离，不直接将数据库模型作为外部 API 契约。
+- 前端代码、依赖和构建配置保留在 `frontend/` 内，不在仓库根目录混放 Node 项目文件。
+- Vue 组件负责界面和交互；可复用逻辑应在出现明确复用需求时提取到职责清晰的模块。
 - 新代码应放入职责最匹配的现有目录，除非新增边界具有明确必要性。

@@ -1,6 +1,6 @@
 # Python Study
 
-FastAPI backend managed with uv.
+FastAPI backend managed with uv, with a Vue 3 and TypeScript frontend managed with npm.
 
 ## 项目结构
 
@@ -16,8 +16,13 @@ PyStudy/
 │   ├── schemas/              # 请求与响应数据模型
 │   ├── services/             # 业务逻辑层
 │   └── main.py               # FastAPI 应用入口
+├── frontend/                 # Vue 3 + TypeScript + Vite 前端
+│   ├── public/               # 前端静态资源
+│   ├── src/                  # 前端应用源码
+│   ├── package.json          # 前端依赖与命令
+│   └── vite.config.ts        # Vite 配置
 ├── doc/                      # 项目文档
-├── tests/                    # 自动化测试
+├── tests/                    # 后端自动化测试
 ├── .env.example              # 环境变量示例
 ├── pyproject.toml            # 项目元数据和依赖配置
 └── uv.lock                   # uv 依赖锁定文件
@@ -37,4 +42,19 @@ Run tests:
 
 ```powershell
 uv run pytest
+```
+
+Run the frontend:
+
+```powershell
+Set-Location frontend
+npm install
+npm run dev
+```
+
+Build the frontend:
+
+```powershell
+Set-Location frontend
+npm run build
 ```

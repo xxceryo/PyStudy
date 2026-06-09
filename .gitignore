@@ -12,6 +12,7 @@ ENV/
 # Packaging
 build/
 dist/
+node_modules/
 *.egg-info/
 .eggs/
 

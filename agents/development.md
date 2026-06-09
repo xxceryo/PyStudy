@@ -3,10 +3,13 @@
 ## 环境与依赖
 
 - 使用 Python 3.12 或项目声明的更高兼容版本。
-- 使用 `uv` 管理依赖、虚拟环境和命令执行。
+- 后端使用 `uv` 管理依赖、虚拟环境和命令执行。
+- 前端使用 `frontend/package.json` 声明兼容的 Node.js 版本，并使用 npm 管理依赖和命令。
 - 新增依赖前确认标准库或现有依赖无法满足需求。
 - 使用 `uv add <package>` 添加运行时依赖，使用 `uv add --dev <package>` 添加开发依赖。
 - 依赖变化时必须同步提交 `pyproject.toml` 和 `uv.lock`。
+- 前端使用 `npm install <package>` 添加运行时依赖，使用 `npm install --save-dev <package>` 添加开发依赖。
+- 前端依赖变化时必须同步提交 `frontend/package.json` 和 `frontend/package-lock.json`。
 - 不提交 `.env`、密钥、口令或其他敏感信息；环境变量示例维护在 `.env.example`。
 
 ## 常用命令
@@ -15,6 +18,10 @@
 uv sync
 uv run fastapi dev app/main.py
 uv run pytest
+Set-Location frontend
+npm install
+npm run dev
+npm run build
 ```
 
 ## 修改原则
